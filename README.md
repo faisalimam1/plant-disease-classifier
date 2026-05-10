@@ -105,14 +105,16 @@ model.fc = nn.Linear(512, 38)
 ---
 
 ## 📁 Repository Structure
-plant-disease-classifier/
-├── app.py                    ← Gradio web app
-├── class_names.json          ← 38 class labels
-├── requirements.txt          ← dependencies
-├── training_curve.png        ← accuracy over epochs
-├── sample_images.png         ← dataset samples
-├── predictions.png           ← model predictions
-└── README.md
+
+| File | Description |
+|------|-------------|
+| `app.py` | Gradio web app |
+| `class_names.json` | 38 class labels |
+| `requirements.txt` | Dependencies |
+| `training_curve.png` | Accuracy over epochs |
+| `sample_images.png` | Dataset samples |
+| `predictions.png` | Model predictions |
+| `README.md` | Project documentation |
 ---
 
 ## ⚙️ Run Locally
