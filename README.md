@@ -60,3 +60,85 @@ This classifier lets a farmer point their phone camera at a leaf and instantly k
 ---
 
 ## 🛠️ Tech Stack
+Model:      ResNet-18 (pretrained on ImageNet, fine-tuned on PlantVillage)
+Framework:  PyTorch + TorchVision
+UI:         Gradio 6
+Dataset:    PlantVillage (87,000+ images)
+Deploy:     HuggingFace Spaces (free, permanent URL)
+Training:   Kaggle Notebook (Tesla T4 GPU)
+---
+
+## 🧠 How It Works
+User uploads plant leaf photo
+↓
+Image resized to 224×224, normalized with ImageNet stats
+↓
+ResNet-18 extracts features (11M parameters, pretrained)
+↓
+Fine-tuned final layer classifies into 38 categories
+↓
+Top-3 predictions + confidence scores returned
+↓
+Treatment recommendation displayed
+---
+
+## 🔬 Model Architecture
+
+```python
+# Transfer Learning approach
+model = ResNet-18 (pretrained=True)
+
+# Freeze early layers — keep ImageNet knowledge
+for param in model.parameters():
+    param.requires_grad = False
+
+# Unfreeze layer4 — adapt to plant disease features
+for param in model.layer4.parameters():
+    param.requires_grad = True
+
+# Replace final layer — 1000 ImageNet classes → 38 plant classes
+model.fc = nn.Linear(512, 38)
+
+# Result: only ~14% of parameters trained
+# Trainable: ~1.4M | Frozen: ~9.8M
+```
+
+---
+
+## 📁 Repository Structure
+plant-disease-classifier/
+├── app.py                    ← Gradio web app
+├── class_names.json          ← 38 class labels
+├── requirements.txt          ← dependencies
+├── training_curve.png        ← accuracy over epochs
+├── sample_images.png         ← dataset samples
+├── predictions.png           ← model predictions
+└── README.md
+---
+
+## ⚙️ Run Locally
+
+```bash
+git clone https://github.com/faisalimam1/plant-disease-classifier.git
+cd plant-disease-classifier
+pip install torch torchvision gradio Pillow
+# Add plant_disease_model.pth to the folder
+python app.py
+```
+
+---
+
+## 👨‍💻 About
+
+**Developed by Faisal Imam** as part of a 30-day AI Engineer Roadmap.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-faisalimam19-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/faisalimam19)
+[![Kaggle](https://img.shields.io/badge/Kaggle-faisalimam19-20BEFF?style=flat&logo=kaggle)](https://www.kaggle.com/faisalimam19)
+[![GitHub](https://img.shields.io/badge/GitHub-faisalimam1-181717?style=flat&logo=github)](https://github.com/faisalimam1)
+
+---
+
+## 📄 Dataset
+
+[New Plant Diseases Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset) by vipoooool on Kaggle.
+87,000+ images across 38 classes of healthy and diseased plant leaves.
