@@ -131,7 +131,7 @@ python app.py
 
 ## 👨‍💻 About
 
-**Developed by Faisal Imam** as part of a 30-day AI Engineer Roadmap.
+**Developed by Faisal Imam**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-faisalimam19-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/faisalimam19)
 [![Kaggle](https://img.shields.io/badge/Kaggle-faisalimam19-20BEFF?style=flat&logo=kaggle)](https://www.kaggle.com/faisalimam19)
