@@ -72,17 +72,13 @@ This classifier lets a farmer point their phone camera at a leaf and instantly k
 ---
 
 ## 🧠 How It Works
-User uploads plant leaf photo
-↓
-Image resized to 224×224, normalized with ImageNet stats
-↓
-ResNet-18 extracts features (11M parameters, pretrained)
-↓
-Fine-tuned final layer classifies into 38 categories
-↓
-Top-3 predictions + confidence scores returned
-↓
-Treatment recommendation displayed
+
+1. User uploads plant leaf photo
+2. Image resized to 224×224, normalized with ImageNet stats
+3. ResNet-18 extracts features (11M parameters, pretrained)
+4. Fine-tuned final layer classifies into 38 categories
+5. Top-3 predictions + confidence scores returned
+6. Treatment recommendation displayed
 ---
 
 ## 🔬 Model Architecture
