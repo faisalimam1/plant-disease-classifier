@@ -60,12 +60,15 @@ This classifier lets a farmer point their phone camera at a leaf and instantly k
 ---
 
 ## 🛠️ Tech Stack
-Model:      ResNet-18 (pretrained on ImageNet, fine-tuned on PlantVillage)
-Framework:  PyTorch + TorchVision
-UI:         Gradio 6
-Dataset:    PlantVillage (87,000+ images)
-Deploy:     HuggingFace Spaces (free, permanent URL)
-Training:   Kaggle Notebook (Tesla T4 GPU)
+
+| Component | Details |
+|-----------|---------|
+| Model | ResNet-18 (pretrained on ImageNet, fine-tuned on PlantVillage) |
+| Framework | PyTorch + TorchVision |
+| UI | Gradio 6 |
+| Dataset | PlantVillage (87,000+ images) |
+| Deployment | HuggingFace Spaces (free, permanent URL) |
+| Training | Kaggle Notebook (Tesla T4 GPU) |
 ---
 
 ## 🧠 How It Works
