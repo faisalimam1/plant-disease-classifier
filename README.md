@@ -38,7 +38,7 @@ This classifier lets a farmer point their phone camera at a leaf and instantly k
 | Total Classes | 38 |
 | Best Validation Accuracy | **99.07%** |
 | Training Epochs | 5 |
-| Training Time | ~16 minutes (T4 GPU) |
+| Training | T4 GPU |
 
 ![Training Curve](training_curve.png)
 
